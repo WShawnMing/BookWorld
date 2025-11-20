@@ -6,7 +6,7 @@ import os
 import csv
 import json
 
-config = load_json_file("./extract_config.json")
+config = load_json_file("./extract_config4.json")
 
 
 
@@ -34,14 +34,24 @@ def get_defaule_location_info(location_name,language):
     return default_location_info
 
 def process_character_chunk(chunk, character_name, language):
-    prompt = f"""Analyze the following text and extract information about {character_name}. 
-    Focus on their personality, background, and key characteristics.
-    If the text doesn't contain relevant information about {character_name}, respond with 'NO_INFO'.
+    if language == 'zh':
+        prompt = f"""分析以下文本并提取关于{character_name}的信息。
+    关注其性格、外貌、身材、背景和关键特征，贴合原文。
+    如果文本中不包含关于{character_name}的相关信息，请回复 'NO_INFO'。
     
-    Text:
+    文本：
     {chunk}
     
-    Provide a concise summary of the character's profile."""
+    提供角色简介的简明摘要。"""
+    else:
+        prompt = f"""Analyze the following text and extract information about {character_name}. 
+        Focus on their personality, background, and key characteristics.
+        If the text doesn't contain relevant information about {character_name}, respond with 'NO_INFO'.
+        
+        Text:
+        {chunk}
+        
+        Provide a concise summary of the character's profile."""
     
     response = llm.chat(prompt)
     if response.strip() != 'NO_INFO':
@@ -49,14 +59,24 @@ def process_character_chunk(chunk, character_name, language):
     return None
 
 def process_character_relation(chunk, char1, char2, language):
-    prompt = f"""Analyze the relationship between {char1} and {char2} in the following text.
-    Focus on their interaction, feelings towards each other, and relationship dynamics.
-    If the text doesn't contain relevant information about their relationship, respond with 'NO_INFO'.
+    if language == 'zh':
+        prompt = f"""分析以下文本中{char1}和{char2}之间的关系。
+    关注他们的互动、彼此的感觉以及关系动态，贴合原文。
+    如果文本中不包含关于他们关系的相关信息，请回复 'NO_INFO'。
     
-    Text:
+    文本：
     {chunk}
     
-    Provide a concise description of their relationship."""
+    提供他们关系的简明描述。"""
+    else:
+        prompt = f"""Analyze the relationship between {char1} and {char2} in the following text.
+        Focus on their interaction, feelings towards each other, and relationship dynamics.
+        If the text doesn't contain relevant information about their relationship, respond with 'NO_INFO'.
+        
+        Text:
+        {chunk}
+        
+        Provide a concise description of their relationship."""
     
     response = llm.chat(prompt)
     if response.strip() != 'NO_INFO':
@@ -64,14 +84,24 @@ def process_character_relation(chunk, char1, char2, language):
     return None
 
 def process_location_chunk(chunk, location_name, language):
-    prompt = f"""Analyze the following text and extract information about {location_name}.
-    Focus on its physical description, significance, and key features.
-    If the text doesn't contain relevant information about {location_name}, respond with 'NO_INFO'.
+    if language == 'zh':
+        prompt = f"""分析以下文本并提取关于{location_name}的信息。
+    关注其物理描述、重要性和关键特征，贴合原文。
+    如果文本中不包含关于{location_name}的相关信息，请回复 'NO_INFO'。
     
-    Text:
+    文本：
     {chunk}
     
-    Provide a concise description of the location."""
+    提供该地点的简明描述。"""
+    else:
+        prompt = f"""Analyze the following text and extract information about {location_name}.
+        Focus on its physical description, significance, and key features.
+        If the text doesn't contain relevant information about {location_name}, respond with 'NO_INFO'.
+        
+        Text:
+        {chunk}
+        
+        Provide a concise description of the location."""
     
     response = llm.chat(prompt)
     if response.strip() != 'NO_INFO':
@@ -188,19 +218,34 @@ def save_json_file(path, data):
 
 def extract_main_characters(text, language):
     """Extract main characters from the text using LLM"""
-    prompt = f"""Analyze the following text and identify the main characters.
-    Focus on characters who:
-    1. Appear frequently throughout the story
-    2. Have significant impact on the plot
-    3. Are central to the narrative
+    if language == 'zh':
+        prompt = f"""分析以下文本并识别主要角色。
+    关注那些：
+    1. 在故事中频繁出现
+    2. 对情节有重大影响
+    3. 是叙事的核心
     
-    For each character, provide their name and a brief reason why they are important.
-    Format: name: reason
+    对于每个角色，提供他们的名字和一个简短的理由，说明为什么他们很重要。
+    格式：名字：理由
     
-    Text:
+    文本：
     {text}
     
-    List the main characters (maximum 10):"""
+    列出主要角色（最多10个）："""
+    else:
+        prompt = f"""Analyze the following text and identify the main characters.
+        Focus on characters who:
+        1. Appear frequently throughout the story
+        2. Have significant impact on the plot
+        3. Are central to the narrative
+        
+        For each character, provide their name and a brief reason why they are important.
+        Format: name: reason
+        
+        Text:
+        {text}
+        
+        List the main characters (maximum 10):"""
     
     response = llm.chat(prompt)
     characters = []
@@ -212,19 +257,34 @@ def extract_main_characters(text, language):
 
 def extract_key_locations(text, language):
     """Extract key locations from the text using LLM"""
-    prompt = f"""Analyze the following text and identify the key locations.
-    Focus on places that:
-    1. Are frequently mentioned
-    2. Have significant importance to the story
-    3. Are central to the plot
+    if language == 'zh':
+        prompt = f"""分析以下文本并识别关键地点。
+    关注那些：
+    1. 经常被提及
+    2. 对故事有重要意义
+    3. 是情节的核心
     
-    For each location, provide its name and a brief reason why it is important.
-    Format: name: reason
+    对于每个地点，提供它的名字和一个简短的理由，说明为什么它很重要。
+    格式：名字：理由
     
-    Text:
+    文本：
     {text}
     
-    List the key locations (maximum 10):"""
+    列出关键地点（最多10个）："""
+    else:
+        prompt = f"""Analyze the following text and identify the key locations.
+        Focus on places that:
+        1. Are frequently mentioned
+        2. Have significant importance to the story
+        3. Are central to the plot
+        
+        For each location, provide its name and a brief reason why it is important.
+        Format: name: reason
+        
+        Text:
+        {text}
+        
+        List the key locations (maximum 10):"""
     
     response = llm.chat(prompt)
     locations = []
@@ -253,9 +313,9 @@ def process_large_text(text, max_length=10000):
         start = split_point + 1
     return chunks
 
-def auto_extract_targets():
+def auto_extract_targets(extract_chars=True, extract_locs=True):
     """Automatically extract target characters and locations from the book"""
-    print("Starting automatic extraction of main characters and locations...")
+    print("Starting automatic extraction...")
     
     # Combine all chapter contents
     full_text = ""
@@ -270,10 +330,12 @@ def auto_extract_targets():
     all_locations = set()
     
     for chunk in text_chunks:
-        characters = extract_main_characters(chunk, language)
-        locations = extract_key_locations(chunk, language)
-        all_characters.update(characters)
-        all_locations.update(locations)
+        if extract_chars:
+            characters = extract_main_characters(chunk, language)
+            all_characters.update(characters)
+        if extract_locs:
+            locations = extract_key_locations(chunk, language)
+            all_locations.update(locations)
     
     # Convert sets to lists
     target_character_names = list(all_characters)
@@ -306,32 +368,37 @@ if __name__ == "__main__":
         llm = get_models(config["llm_model_name"])
         data = get_chapters(book_path) # chapters = [{"idx":"","title":"","content":""}]
         
-        if not target_character_names or not target_location_names:
-            print("No target characters or locations specified. Starting automatic extraction...")
-            target_character_names, target_location_names = auto_extract_targets()
+        if not target_character_names:
+            print("No target characters specified. Starting automatic extraction...")
+            extracted_chars, _ = auto_extract_targets(extract_chars=True, extract_locs=False)
+            target_character_names = extracted_chars
             
             # Update config with extracted targets
             config["target_character_names"] = target_character_names
-            config["target_location_names"] = target_location_names
+            # config["target_location_names"] = target_location_names # We don't auto-extract locations anymore unless specified
             save_json_file("./extract_config.json", config)
             
-            print("Updated config file with extracted targets")
-            print(target_character_names,target_location_names)
+            print("Updated config file with extracted characters")
+            print(target_character_names)
         
         # main
-        for chapter in data:
+        for idx, chapter in enumerate(data):
+            print(f"Processing Chapter {chapter.get('idx', idx+1)}: {chapter.get('title', 'Unknown Title')}...")
             text = chapter['content']
             if language == 'en':
                 chunks = split_text_by_max_words(text, max_words=2000)
             else:
                 chunks = split_text_by_max_words(text, max_words=4000)
             
-            for chunk in chunks:
+            for i, chunk in enumerate(chunks):
+                print(f"  - Processing Chunk {i+1}/{len(chunks)}")
                 # Profile
                 for character in target_character_names:
                     if character in chunk:
                         new_profile = process_character_chunk(chunk, character, language)
-                        update_character_info(character, new_profile)
+                        if new_profile:
+                            print(f"    > Extracted profile for {character}")
+                            update_character_info(character, new_profile)
                 # Relation
                 for i, char1 in enumerate(target_character_names):
                     for char2 in target_character_names[i+1:]:
@@ -340,12 +407,16 @@ if __name__ == "__main__":
                             char2_pos = chunk.find(char2)
                             if abs(char1_pos - char2_pos) <= 100:
                                 new_relation = process_character_relation(chunk, char1, char2, language)
-                                update_character_relation(char1, char2, new_relation)
+                                if new_relation:
+                                    print(f"    > Extracted relation between {char1} and {char2}")
+                                    update_character_relation(char1, char2, new_relation)
                 # Location
                 for location in target_location_names:
                     if location in chunk:
                         new_description = process_location_chunk(chunk, location, language)
-                        update_location_info(location, new_description)
+                        if new_description:
+                            print(f"    > Extracted info for location {location}")
+                            update_location_info(location, new_description)
                         
         # Replace the original save results section
         print("Starting to save extracted data...")

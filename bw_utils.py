@@ -51,6 +51,9 @@ def get_models(model_name):
         elif model_name.startswith("claude-3.5-haiku"):
             return Claude(model="claude-3-5-haiku-latest")
         return Claude()
+    elif model_name.startswith('Qwen/') or model_name.startswith('deepseek-ai/'):
+        from modules.llm.SiliconFlow import SiliconFlow
+        return SiliconFlow(model = model_name)
     elif model_name.startswith('qwen'):
         from modules.llm.Qwen import Qwen
         return Qwen(model = model_name)

@@ -85,22 +85,24 @@ def update_settings(dic,lis,settings,source):
     return dic,lis
 
 
-for chapter in data:
+for idx_c, chapter in enumerate(data):
     text = chapter['content']
     title = chapter['title']
     idx = chapter["idx"]
-    print(idx)
+    print(f"Processing Chapter {idx}: {title}...")
     if language == 'en':
         chunks = split_text_by_max_words(text,max_words=2000)
     else:
         chunks = split_text_by_max_words(text,max_words=4000)
-    for chunk in chunks:
+    for i, chunk in enumerate(chunks):
+        print(f"  - Processing Chunk {i+1}/{len(chunks)}")
         prompt = EXTRACT_SETTINGS_PROMPT.format(**{
             "text":chunk,
             "source":book_source
         })
         output = clear_blank_row(llm.chat(prompt))
-        print(output)
+        if output:
+            print(f"    > Extracted settings:\n{output}")
         dic_settings,lis_settings = update_settings(dic_settings, lis_settings, output,f"{idx}_{title}")
 
 dic_settings2 = dict(sorted(dic_settings.items(), key=lambda x:x[0]))
