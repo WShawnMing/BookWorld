@@ -1,0 +1,82 @@
+{
+  "role_name": "孟还真",
+  "role_code": "孟还真-zh",
+  "source": "娱乐春秋",
+  "profile": "**孟还真角色信息提取：**\n\n**NO_INFO**\n\n**分析依据：**\n文本中仅有一处提及孟还真：\n* \"败者便是星月宗祖师孟还真，也就是本书主角所在宗门开创者。\"\n这段描述仅说明了孟还真是星月宗的祖师和历史人物，未包含关于其性格、外貌、身材、背景或其他关键特征的具体信息。\nNO_INFO\n\n文本中虽有\"孟还真\"条目，但并未提供关于其性格、外貌、身材、背景的具体描述。\n文本中提及的关于孟还真的唯一信息是：\n- 身份：星月宗祖师，千年前的合道者。\n- 与主角薛牧的关系：因意外与薛牧灵魂交合而爱上他，被薛牧穿越时空救回，成为其后宫一员。\n\n此段描述不包含其性格、外貌、身材或其他关键特征的任何信息。",
+  "activity": 1,
+  "nickname": "孟还真",
+  "relation": {
+    "薛牧-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "薛清秋-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "岳小禅-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张梦岚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "祝辰瑶-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦无夜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "慕剑璃-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "卓青青-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "刘婉兮-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "罗千雪-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "莫雪心-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "叶孤影-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "萧轻抚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "夏侯荻-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "黎晓瑞-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦夤夜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "心儿-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "徐微微-zh": {
+      "relation": [],
+      "detail": ""
+    }
+  }
+}

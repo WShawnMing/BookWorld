@@ -1,0 +1,198 @@
+{
+  "role_name": "花荣",
+  "role_code": "花荣-zh",
+  "source": "水浒传",
+  "profile": "**花荣信息提取（贴合原文）**\n\n*   **外貌与身材：**\n    *   原文明确描述其为“**少年的军官**”。这表明他是一位年轻、英俊的武将。\n*   **性格：**\n    *   **重义气，敬兄长**：见到宋江后“纳头便拜四拜”，并长期牵挂宋江安危，多次寄信。对宋江的侍奉“朝暮臻臻至至”，极为周到。\n    *   **武艺高强，自信果敢**：自述“若还是小弟独自在这里守把时，远近强人怎敢把青州扰得粉碎”，对自己的能力有充分自信。\n    *   **性情刚烈，嫉恶如仇**：对同僚刘知寨的评价是“穷酸饿醋”、“滥污贼禽兽”，对刘知寨的夫人则评价为“极不贤”，并直言“恨不得杀了”刘知寨。对于宋江救了刘恭人一事，他直言不讳地表示了反对。\n*   **背景与关键特征：**\n    *   **职务**：清风寨的**武知寨（副知寨）**，是一位镇守地方的武官。\n    *   **绰号**：**“小李广”**。这个绰号直接点明他箭术超凡，如同汉代的飞将军李广。\n    *   **人际关系**：与宋江是旧识，关系密切，尊称宋江为“兄长”。与正知寨刘高关系恶劣，矛盾很深。\n    *   **关键情节**：本回中，他因宋江之事而与刘高爆发冲突，为后续的“**花荣大闹清风寨**”埋下伏笔。\n\n**简明摘要：**\n花荣，绰号“小李广”，是清风寨的副知寨，一位年轻英武的军官。他武艺高强，尤其箭术精湛。性格上重义气、敬兄长，但也刚烈直率、嫉恶如仇，因此与正知寨刘高矛盾深刻。",
+  "activity": 1,
+  "nickname": "花荣",
+  "relation": {
+    "宋江-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "卢俊义-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "吴用-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "公孙胜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "林冲-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "鲁智深-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "武松-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李逵-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "燕青-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "杨志-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "晁盖-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "柴进-zh": {
+      "relation": [],
+      "detail": "在节选文本中，花荣的名字并未出现。柴进（小旋风柴进）只是作为宋江考虑投奔的避难处之一被提及（宋江说“一是沧州横海郡小旋风柴进庄上”），但柴进本人没有出场，也没有与花荣的互动描写。因此，关于花荣和柴进之间的关系，本文本中不包含相关信息。\n\n**结论：** NO_INFO"
+    },
+    "戴宗-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "刘唐-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "史进-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "朱仝-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "雷横-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李俊-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小二-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小五-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小七-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张顺-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张横-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "关胜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "呼延灼-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦明-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "董平-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张清-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "杨雄-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "石秀-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "解珍-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "解宝-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "扈三娘-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "孙二娘-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "顾大嫂-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "时迁-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "王英-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "安道全-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "萧让-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "金大坚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "高俅-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "蔡京-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "西门庆-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "潘金莲-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阎婆惜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李师师-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "方腊-zh": {
+      "relation": [],
+      "detail": ""
+    }
+  }
+}

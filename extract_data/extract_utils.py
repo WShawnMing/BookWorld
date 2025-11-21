@@ -8,6 +8,11 @@ from bw_utils import *
 import re
 import pdfplumber
 
+def ensure_dir(path):
+    """Ensure directory exists, create if not"""
+    if not os.path.exists(path):
+        os.makedirs(path)
+
 def extract_text_by_bookmark(book, start_href, end_href = ""):
     """
     end_href: 搜索截止处。若为空字符串则直接搜索到结尾

@@ -1,8 +1,9 @@
 {
-  "book_path": "/Users/shawn_ming/test/BookWorld/books/红楼梦.txt",
+  "book_path": "../books/红楼梦.txt",
   "language": "zh",
   "book_source": "红楼梦",
   "target_character_names": [
+    "贾宝玉",
     "艾官",
     "宝蟾",
     "宝官",

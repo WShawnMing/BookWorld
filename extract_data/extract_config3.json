@@ -1,8 +1,9 @@
 {
-  "book_path": "/Users/shawn_ming/test/BookWorld/books/大小姐们请自重.txt",
+  "book_path": "../books/大小姐们请自重.txt",
   "language": "zh",
   "book_source": "大小姐们请自重",
   "target_character_names": [
+    "雪代遥",
     "紫夫人",
     "桃沢爱",
     "藤原雪纯",
@@ -11,7 +12,7 @@
     "黑崎十六夜",
     "村上铃音",
     "小泉信奈",
-    "一条夫人",
+    "一条太太",
     "一条郁子",
     "红菱",
     "白桦",

@@ -1,8 +1,9 @@
 {
-  "book_path": "/Users/shawn_ming/test/BookWorld/books/娱乐春秋.txt",
+  "book_path": "../books/娱乐春秋.txt",
   "language": "zh",
   "book_source": "娱乐春秋",
   "target_character_names": [
+    "薛牧",
     "薛清秋",
     "岳小禅",
     "张梦岚",

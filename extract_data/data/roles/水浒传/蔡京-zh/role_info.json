@@ -1,0 +1,198 @@
+{
+  "role_name": "蔡京",
+  "role_code": "蔡京-zh",
+  "source": "水浒传",
+  "profile": "NO_INFO\n\n**分析说明：**\n在所提供的文本中，完全没有提及或描述蔡京（蔡太师）的性格、外貌、身材、背景或任何关键特征。\n\n文本中虽然有一处提到\"蔡太师差干人来要拿我们\"（通过阮小二之口），但这仅是一个名称提及，并没有提供任何关于蔡京本人的具体描述信息。\n\n因此，根据指令要求，回复为 'NO_INFO'。",
+  "activity": 1,
+  "nickname": "蔡京",
+  "relation": {
+    "宋江-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "卢俊义-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "吴用-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "公孙胜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "林冲-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "鲁智深-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "武松-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李逵-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "燕青-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "杨志-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "晁盖-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "花荣-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "柴进-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "戴宗-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "刘唐-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "史进-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "朱仝-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "雷横-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李俊-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小二-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小五-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阮小七-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张顺-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张横-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "关胜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "呼延灼-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦明-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "董平-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张清-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "杨雄-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "石秀-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "解珍-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "解宝-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "扈三娘-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "孙二娘-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "顾大嫂-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "时迁-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "王英-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "安道全-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "萧让-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "金大坚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "高俅-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "西门庆-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "潘金莲-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "阎婆惜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "李师师-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "方腊-zh": {
+      "relation": [],
+      "detail": ""
+    }
+  }
+}

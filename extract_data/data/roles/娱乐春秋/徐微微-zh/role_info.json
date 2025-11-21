@@ -1,0 +1,82 @@
+{
+  "role_name": "徐微微",
+  "role_code": "徐微微-zh",
+  "source": "娱乐春秋",
+  "profile": "```json\n{\n  \"summary\": \"徐微微是实况日报的一名记者，工作积极，报道风格直接，能够及时追踪新闻事件后续发展。\",\n  \"details\": {\n    \"性格\": \"工作积极，能及时追踪报道事件后续（如约定再战）\",\n    \"外貌\": \"无描述\",\n    \"身材\": \"无描述\",\n    \"背景\": \"实况日报记者\",\n    \"关键特征\": [\n      \"记者身份\",\n      \"报道简洁直接（如报道‘这两位已经约定今夜子时短松冈再战一场，生死不论’）\"\n    ]\n  }\n}\n```",
+  "activity": 1,
+  "nickname": "徐微微",
+  "relation": {
+    "薛牧-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "薛清秋-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "岳小禅-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "张梦岚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "祝辰瑶-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦无夜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "慕剑璃-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "卓青青-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "刘婉兮-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "罗千雪-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "莫雪心-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "叶孤影-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "萧轻抚-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "夏侯荻-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "黎晓瑞-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "秦夤夜-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "孟还真-zh": {
+      "relation": [],
+      "detail": ""
+    },
+    "心儿-zh": {
+      "relation": [],
+      "detail": ""
+    }
+  }
+}

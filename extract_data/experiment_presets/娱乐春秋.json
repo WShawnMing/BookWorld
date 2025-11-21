@@ -1,0 +1,31 @@
+{
+  "experiment_subname": "1",
+  "world_file_path": "./data/worlds/娱乐春秋/general.json",
+  "map_file_path": "./data/maps/娱乐春秋.csv",
+  "loc_file_path": "./data/locations/娱乐春秋.json",
+  "role_file_dir": "./data/roles/",
+  "role_agent_codes": [
+    "薛清秋-zh",
+    "岳小禅-zh",
+    "张梦岚-zh",
+    "祝辰瑶-zh",
+    "秦无夜-zh",
+    "慕剑璃-zh",
+    "卓青青-zh",
+    "刘婉兮-zh",
+    "罗千雪-zh",
+    "莫雪心-zh",
+    "叶孤影-zh",
+    "萧轻抚-zh",
+    "夏侯荻-zh",
+    "黎晓瑞-zh",
+    "秦夤夜-zh",
+    "孟还真-zh",
+    "心儿-zh",
+    "徐微微-zh"
+  ],
+  "intervention": "",
+  "script": "",
+  "source": "娱乐春秋",
+  "language": "zh"
+}

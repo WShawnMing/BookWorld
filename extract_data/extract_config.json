@@ -1,8 +1,9 @@
 {
-  "book_path": "/Users/shawn_ming/test/BookWorld/books/问道红尘.txt",
+  "book_path": "../books/问道红尘.txt",
   "language": "zh",
   "book_source": "问道红尘",
   "target_character_names": [
+    "秦弈",
     "流苏",
     "李青君",
     "明河",

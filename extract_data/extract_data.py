@@ -5,8 +5,68 @@ from extract_utils import *
 import os
 import csv
 import json
+from datetime import datetime
 
 config = load_json_file("./extract_config4.json")
+
+def load_progress(book_source):
+    """Load processing progress"""
+    progress_file = f"./data/.progress_{book_source}.json"
+    if os.path.exists(progress_file):
+        try:
+            with open(progress_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading progress file: {e}")
+    return {
+        "last_chapter_idx": -1,
+        "last_chunk_idx": -1,
+        "completed": False
+    }
+
+def save_progress(book_source, chapter_idx, chunk_idx, completed=False):
+    """Save processing progress"""
+    progress_file = f"./data/.progress_{book_source}.json"
+    ensure_dir("./data/")
+    progress = {
+        "last_chapter_idx": chapter_idx,
+        "last_chunk_idx": chunk_idx,
+        "completed": completed,
+        "timestamp": str(datetime.now())
+    }
+    with open(progress_file, 'w', encoding='utf-8') as f:
+        json.dump(progress, f, ensure_ascii=False, indent=2)
+
+def load_existing_character_info(book_source):
+    """Load existing character info from files"""
+    characters_info = {}
+    role_dir = f"./data/roles/{book_source}"
+    if os.path.exists(role_dir):
+        for role_folder in os.listdir(role_dir):
+            role_path = os.path.join(role_dir, role_folder, "role_info.json")
+            if os.path.exists(role_path):
+                try:
+                    with open(role_path, 'r', encoding='utf-8') as f:
+                        role_info = json.load(f)
+                        characters_info[role_info["role_name"]] = role_info
+                except Exception as e:
+                    print(f"Error loading role info from {role_path}: {e}")
+    if characters_info:
+        print(f"Loaded existing info for {len(characters_info)} characters")
+    return characters_info
+
+def load_existing_location_info(book_source):
+    """Load existing location info from file"""
+    location_file = f"./data/locations/{book_source}.json"
+    if os.path.exists(location_file):
+        try:
+            with open(location_file, 'r', encoding='utf-8') as f:
+                locations_info = json.load(f)
+                print(f"Loaded existing info for {len(locations_info)} locations")
+                return locations_info
+        except Exception as e:
+            print(f"Error loading location info from {location_file}: {e}")
+    return {}
 
 
 
@@ -109,10 +169,15 @@ def process_location_chunk(chunk, location_name, language):
     return None
 
 def update_character_info(character_name, new_profile):
+    # Ensure character exists in target_characters_info
     if character_name not in target_characters_info:
         target_characters_info[character_name] = get_default_character_info(
             character_name, language, [name for name in target_character_names if name != character_name]
         )
+    
+    # Ensure profile field exists
+    if "profile" not in target_characters_info[character_name]:
+        target_characters_info[character_name]["profile"] = ""
     
     if new_profile:
         current_profile = target_characters_info[character_name]["profile"]
@@ -126,11 +191,23 @@ def update_character_relation(char1, char2, new_relation):
         char1_code = convert_name_to_code(char1, language)
         char2_code = convert_name_to_code(char2, language)
         
+        # Ensure char1 exists in target_characters_info
         if char1 not in target_characters_info:
             target_characters_info[char1] = get_default_character_info(
                 char1, language, [name for name in target_character_names if name != char1]
             )
         
+        # Ensure relation dictionary exists for char1
+        if "relation" not in target_characters_info[char1]:
+            target_characters_info[char1]["relation"] = {}
+        
+        # Ensure relation structure exists for char2
+        if char2_code not in target_characters_info[char1]["relation"]:
+             target_characters_info[char1]["relation"][char2_code] = {
+                "relation": [], 
+                "detail": ""
+             }
+
         current_relation = target_characters_info[char1]["relation"][char2_code]["detail"]
         if current_relation:
             target_characters_info[char1]["relation"][char2_code]["detail"] = current_relation + "\n" + new_relation
@@ -148,13 +225,6 @@ def update_location_info(location_name, new_description):
             target_locations_info[location_code]["description"] = current_description + "\n" + new_description
         else:
             target_locations_info[location_code]["description"] = new_description
-
-
-
-def ensure_dir(path):
-    """Ensure directory exists, create if not"""
-    if not os.path.exists(path):
-        os.makedirs(path)
 
 def save_role_info(role_info):
     """Save individual role information to specified path"""
@@ -381,8 +451,31 @@ if __name__ == "__main__":
             print("Updated config file with extracted characters")
             print(target_character_names)
         
+        # Load progress and existing data
+        progress = load_progress(book_source)
+        print(f"Progress loaded: Chapter {progress['last_chapter_idx']}, Chunk {progress['last_chunk_idx']}")
+        
+        # Load existing data to memory to continue updating
+        existing_chars = load_existing_character_info(book_source)
+        target_characters_info.update(existing_chars)
+        
+        existing_locs = load_existing_location_info(book_source)
+        target_locations_info.update(existing_locs)
+
+        # Ensure all target characters have entries in target_characters_info (even if empty)
+        for char_name in target_character_names:
+             if char_name not in target_characters_info:
+                # Initialize if not exists
+                pass # Will be initialized in update_character_info
+        
         # main
+        total_chapters = len(data)
         for idx, chapter in enumerate(data):
+            # Skip already processed chapters
+            if idx < progress['last_chapter_idx']:
+                print(f"Skipping Chapter {chapter.get('idx', idx+1)} (already processed)")
+                continue
+
             print(f"Processing Chapter {chapter.get('idx', idx+1)}: {chapter.get('title', 'Unknown Title')}...")
             text = chapter['content']
             if language == 'en':
@@ -390,7 +483,16 @@ if __name__ == "__main__":
             else:
                 chunks = split_text_by_max_words(text, max_words=4000)
             
-            for i, chunk in enumerate(chunks):
+            start_chunk = 0
+            # If resuming current chapter, set start chunk
+            if idx == progress['last_chapter_idx']:
+                start_chunk = progress['last_chunk_idx'] + 1
+                if start_chunk >= len(chunks):
+                    # Should not happen if logic is correct, but just in case
+                    start_chunk = 0 
+            
+            for i in range(start_chunk, len(chunks)):
+                chunk = chunks[i]
                 print(f"  - Processing Chunk {i+1}/{len(chunks)}")
                 # Profile
                 for character in target_character_names:
@@ -399,9 +501,13 @@ if __name__ == "__main__":
                         if new_profile:
                             print(f"    > Extracted profile for {character}")
                             update_character_info(character, new_profile)
+                            # Save immediately
+                            if character in target_characters_info:
+                                save_role_info(target_characters_info[character])
+
                 # Relation
-                for i, char1 in enumerate(target_character_names):
-                    for char2 in target_character_names[i+1:]:
+                for j, char1 in enumerate(target_character_names):
+                    for char2 in target_character_names[j+1:]:
                         if char1 in chunk and char2 in chunk:
                             char1_pos = chunk.find(char1)
                             char2_pos = chunk.find(char2)
@@ -410,6 +516,10 @@ if __name__ == "__main__":
                                 if new_relation:
                                     print(f"    > Extracted relation between {char1} and {char2}")
                                     update_character_relation(char1, char2, new_relation)
+                                    # Save immediately (char1 relation updated)
+                                    if char1 in target_characters_info:
+                                        save_role_info(target_characters_info[char1])
+
                 # Location
                 for location in target_location_names:
                     if location in chunk:
@@ -417,9 +527,17 @@ if __name__ == "__main__":
                         if new_description:
                             print(f"    > Extracted info for location {location}")
                             update_location_info(location, new_description)
-                        
+                            # Save immediately (optional, can be frequent)
+                            save_location_info(target_locations_info)
+                
+                # Save progress after chunk
+                save_progress(book_source, idx, i, completed=False)
+        
+        # Mark as completed
+        save_progress(book_source, len(data)-1, 0, completed=True)
+
         # Replace the original save results section
-        print("Starting to save extracted data...")
+        print("Starting to save extracted data (Final check)...")
 
         # Save role information
         for role_info in target_characters_info.values():

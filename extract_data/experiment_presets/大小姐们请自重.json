@@ -1,0 +1,29 @@
+{
+  "experiment_subname": "1",
+  "world_file_path": "./data/worlds/大小姐们请自重/general.json",
+  "map_file_path": "./data/maps/大小姐们请自重.csv",
+  "loc_file_path": "./data/locations/大小姐们请自重.json",
+  "role_file_dir": "./data/roles/",
+  "role_agent_codes": [
+    "雪代遥-zh",
+    "紫夫人-zh",
+    "桃沢爱-zh",
+    "藤原雪纯-zh",
+    "藤原清姬-zh",
+    "桃沢咲夜-zh",
+    "黑崎十六夜-zh",
+    "村上铃音-zh",
+    "小泉信奈-zh",
+    "一条夫人-zh",
+    "一条郁子-zh",
+    "红菱-zh",
+    "白桦-zh",
+    "平岛太太-zh",
+    "前堂绪子-zh",
+    "千穗理-zh"
+  ],
+  "intervention": "",
+  "script": "",
+  "source": "大小姐们请自重",
+  "language": "zh"
+}
